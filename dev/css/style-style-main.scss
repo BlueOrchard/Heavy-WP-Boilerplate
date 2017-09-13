@@ -1,0 +1,30 @@
+/* Global Variables */
+$fontColor: #404040;
+$linkColor: #4554ca;
+$linkHoverColor: #8c94d8;
+
+$borderColor: #DDD;
+
+/* Border Box Box Sizing */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Typography: Handles the way fonts look. Also handles bottom margin of text. */
+@import "import/style-typography";
+
+/* Header CSS. Includes Search bar CSS as well. */
+@import "import/style-header";
+
+/* Content area CSS (Post and Page). Includes Sidebar and Homepage/Archive/Search/Comment CSS as well. */
+@import "import/style-content";
+
+/* Footer CSS */
+@import "import/style-footer";
+
+/* Slick Slider CSS. Be sure to uncomment this and the enqueue script + style in functions.php */
+//@import "extra/slick";
+//@import "extra/slick-theme";

@@ -1,1 +1,2 @@
-mjs-wp-boilerplate
+# Blue's WordPress Boilerplate
+Just run "npm install" and "npm install -g gulp" and you should be ready to go! Run "gulp" to start gulp up and start editing away. Gulp will automatically convert, minify, and prefix the SCSS files.
