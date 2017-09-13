@@ -23,5 +23,22 @@
 
 <?php wp_footer(); ?>
 
+<script>
+	$('.submit-email').submit(function(e){
+		e.preventDefault();
+		var formData = $(this).serialize();
+
+		$.ajax({
+			data	: formData,
+			url		: "<?php echo get_template_directory_uri().'/email-component/user-signup.php';?>",
+			method	: 'POST',
+		}).done(function(){
+			$('.submit-email').append('<h3 class="thanks">Thanks for Joining!</h3>');
+			$('.join-submit').attr("disabled", true);
+		});
+	})
+</script>
+<!-- Coded With <3 -->
+
 </body>
 </html>
