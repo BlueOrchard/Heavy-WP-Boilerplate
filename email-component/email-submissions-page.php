@@ -1,9 +1,9 @@
 <?php
 
 function email_submissions() {
+    require_once('setup-db.php');
 
     wp_enqueue_style( 'bplate-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );    
-
     wp_enqueue_style( 'bplate-custom', get_template_directory_uri().'/email-component/email-backend.css' );
 
     echo "<div class='header-ms'>";
@@ -29,15 +29,20 @@ function email_submissions() {
     $menuURL = menu_page_url('email-submissions', false);
 
     echo '<table class="submissions-ms">';
-    echo '<tr><th>Name</th><th>Email</th><th>Options</th></tr>';
+    echo '<tr>';
+    foreach($options_db as $option){
+        echo '<th>'.$option->name.'</th>';
+    }
+    echo '<th>Options</th></tr>';
         foreach($retrieve_data as $single){ 
-            
             $deleteURL = $menuURL . '&delete=' . $single->id;
             ?>
 
             <tr>
-                <td><?php echo $single->name ?></td>
-                <td><?php echo $single->email ?></td>
+                <?php foreach($options_db as $option){ 
+                    $slug = $option->slug;
+                    echo '<td>'.$single->$slug.'</td>';
+                } ?>
                 <td class="options">
                     <a class="delete" href="<?php echo $deleteURL ?>">Delete</a>
                 </td>

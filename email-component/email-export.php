@@ -2,6 +2,8 @@
     define( 'WP_USE_THEMES', false );
     require( '../../../../wp-load.php' );
 
+    require_once('setup-db.php');
+
     global $wpdb;
 
     $table_name = $wpdb->prefix . "users_subscribed";
@@ -9,11 +11,22 @@
 
     $f = fopen("export.csv", "w+");
 
-    fputcsv($f, array('name', 'email'));
+    $column_names = array();
+    foreach($options_db as $option){
+        $column_names[] = $option->slug;
+    }
+
+    fputcsv($f, $column_names);
 
     foreach ($retrieve_data as $line) {
-        $parsed = array($line->name, $line->email);
-        fputcsv($f, $parsed); 
+        $row_data = array();
+
+        foreach($options_db as $option){
+            $slug = $option->slug;
+            $row_data[] = $line->$slug;
+        }
+
+        fputcsv($f, $row_data); 
     }
 
     fseek($f, 0);

@@ -1,6 +1,12 @@
 <?php
 
+if(isset($_GET['upgrade-email-db'])){
+	create_subscribe_form_db();
+}
+
 function create_subscribe_form_db(){
+	require_once('setup-db.php');
+
 	global $wpdb;
 
 	$table_name = $wpdb->prefix . "users_subscribed";
@@ -16,6 +22,14 @@ function create_subscribe_form_db(){
 	
 	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 	dbDelta( $sql );
+
+	foreach($options_db as $option){
+		$sql = "CREATE TABLE $table_name (
+				$option->slug text NOT NULL
+		) $charset_collate;";
+
+		dbDelta( $sql );
+	}
 }
 
 add_action("after_switch_theme", "create_subscribe_form_db");
