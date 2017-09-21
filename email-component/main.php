@@ -1,5 +1,6 @@
 <?php
 
+//Upgrade DB
 if(isset($_GET['upgrade-email-db'])){
 	create_subscribe_form_db();
 }

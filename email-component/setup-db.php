@@ -3,7 +3,7 @@
 
     if(!file_exists($json_path) || isset($_GET["upgrade-email-db"])){
         $file = fopen($json_path, 'w');
-
+        
         $options = array();
 
         $single_option = new stdClass();
