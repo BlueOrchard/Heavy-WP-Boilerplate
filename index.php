@@ -22,7 +22,7 @@ get_header(); ?>
 		/* Landing Page parts. Landing page will now be modularized */
 
 		/* Splash Page. Uncomment if needed. */
-		require 'index-parts/splash.php';
+		//require 'index-parts/splash.php';
 
 		?>
 
