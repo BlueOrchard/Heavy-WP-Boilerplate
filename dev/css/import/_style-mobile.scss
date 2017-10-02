@@ -7,7 +7,13 @@
 }
 
 @media screen and (max-width: 640px){
-    
+    .desktop{
+        display: none!important;
+    }
+
+    .mobile{
+        display: block!important;
+    }
 }
 
 @media screen and (max-width: 400px){
