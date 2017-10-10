@@ -38,7 +38,12 @@
 			$('.submit-status').text('Thanks for Joining!');
 			$('.join-submit').attr("disabled", true);
 		});
-	})
+	});
+
+	$('.mobile-nav-button').on('click', function(){
+		$(this).toggleClass('active-nav');
+		$('.main-navigation').toggleClass('active-main');
+	});
 </script>
 <!-- Coded With <3 -->
 

@@ -33,6 +33,12 @@
 			endif; ?>
 		</div><!-- .site-branding -->
 
+		<div class="mobile-nav-button">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
 		<nav id="site-navigation" class="main-navigation">
 			<?php
 				wp_nav_menu( array(
