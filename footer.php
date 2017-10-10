@@ -27,13 +27,15 @@
 	$('.submit-email').submit(function(e){
 		e.preventDefault();
 		var formData = $(this).serialize();
+		$('.join-submit').attr("disabled", true);
+		$('.submit-email').append('<h3 class="submit-status">Submitting...</h3>');
 
 		$.ajax({
 			data	: formData,
 			url		: "<?php echo get_template_directory_uri().'/email-component/user-signup.php';?>",
 			method	: 'POST',
 		}).done(function(){
-			$('.submit-email').append('<h3 class="thanks">Thanks for Joining!</h3>');
+			$('.submit-status').text('Thanks for Joining!');
 			$('.join-submit').attr("disabled", true);
 		});
 	})
