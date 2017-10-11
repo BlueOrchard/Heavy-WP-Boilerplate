@@ -6,7 +6,7 @@ var prefix = require('gulp-autoprefixer');
 var clean = require('gulp-clean-css');
 var wait = require('gulp-wait');
 
-var devCSS = 'dev/css/';
+var devCSS = 'src/css/';
 
 gulp.task('cssPack', function() {
     var sassFiles,
