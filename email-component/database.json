@@ -1,1 +1,1 @@
-[{"name":"Name","slug":"name"},{"name":"Email","slug":"email"}]
+[{"name":"Name","slug":"name","required":true},{"name":"Email","slug":"email","required":true}]

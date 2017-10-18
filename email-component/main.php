@@ -1,5 +1,14 @@
 <?php
 
+//Equeue Frontend Scripts
+if(!is_admin()){
+	wp_enqueue_script('email_ajax_js', get_template_directory_uri() . '/email-component/email-ajax.js', array('jquery'), null, true);
+
+	$template_directory = get_template_directory_uri();
+	
+	wp_localize_script('email_ajax_js', 'templateDirectory', $template_directory);
+}
+
 //Upgrade DB
 if(isset($_GET['upgrade-email-db'])){
 	create_subscribe_form_db();
