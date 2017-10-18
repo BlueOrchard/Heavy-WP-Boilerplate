@@ -1,6 +1,12 @@
 $(document).ready(function(){
+    $.ajax({
+        url : templateDirectory + '/email-component/signup-form.html'
+    }).done(function(form){
+        $('.email-form').html(form);
+    })
+
     var submit = false;
-    $('.submit-email').submit(function(e){
+    $(document).on('submit', '.submit-email', function(e){
         e.preventDefault();
         if(submit == false){
             var formData = $(this).serialize();
@@ -19,6 +25,7 @@ $(document).ready(function(){
             }).done(function(response){
                 if(response.error){
                     $('.submit-status').text('Please Fill in Required Fields.');
+                    $('.join-submit').attr("disabled", false);
                 } else {
                     $('.submit-status').text('Thanks for Joining!');
                     $('.join-submit').attr("disabled", true);
