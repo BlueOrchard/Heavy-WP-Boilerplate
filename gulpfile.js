@@ -1,10 +1,12 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var merge = require('merge-stream');
-var concat = require('gulp-concat');
-var prefix = require('gulp-autoprefixer');
-var clean = require('gulp-clean-css');
-var wait = require('gulp-wait');
+var gulp    = require('gulp');
+var sass    = require('gulp-sass');
+var merge   = require('merge-stream');
+var concat  = require('gulp-concat');
+var prefix  = require('gulp-autoprefixer');
+var clean   = require('gulp-clean-css');
+var wait    = require('gulp-wait');
+var plumber = require('gulp-plumber');
+var gutil   = require('gulp-util');
 
 var devCSS = 'src/css/';
 
@@ -14,6 +16,10 @@ gulp.task('cssPack', function() {
         themeInfo;
 
     sassFiles = gulp.src(devCSS + 'style-style-main.scss')
+        .pipe(plumber(function (error) {
+            gutil.log(error.message);
+            this.emit('end');
+        }))
         .pipe(wait(500))
         .pipe(sass());
 
@@ -37,4 +43,4 @@ gulp.task('default', ['cssPack'], function() {
     gulp.watch(devCSS + '*.scss', ['cssPack']);
     gulp.watch(devCSS + 'import/*.scss', ['cssPack']);
     gulp.watch(devCSS + 'extra/*.scss', ['cssPack']);
-})
+});
