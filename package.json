@@ -3,17 +3,18 @@
   "version": "1.0.0",
   "description": "A boilerplate combination of tools I use for development of web items. More specifically for SASS, HTML5, Vendor Prefixes, and CSS Normalize.",
   "main": "index.js",
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
-    "gulp-plumber": "^1.1.0",
-    "gulp-util": "^3.0.8",
+    "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-clean-css": "^3.5.0",
     "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
     "gulp-wait": "0.0.2",
     "merge-stream": "^1.0.1",
     "node-sass": "^4.5.3"

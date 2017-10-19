@@ -23,12 +23,6 @@
 
 <?php wp_footer(); ?>
 
-<script>
-	$('.mobile-nav-button').on('click', function(){
-		$(this).toggleClass('active-nav');
-		$('.main-navigation').toggleClass('active-main');
-	});
-</script>
 <!-- Coded With <3 -->
 
 </body>

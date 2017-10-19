@@ -69,14 +69,17 @@ function bplate_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	//Enqueue Slick Slider - CSS is merged with main CSS file using SCSS. Be sure to uncomment the import in style-style-main.scss.
+	// DEPRECATED: Remove "ignore." from "ignore.slick.min.js" in ./src/js/ to use Slick Slider.
+	// - Enqueue Slick Slider - CSS is merged with main CSS file using SCSS. Be sure to uncomment the import in style-style-main.scss.
 	// - Example initialization inside of custom.js. Be sure to uncomment that as well if you want to use it.
 	//wp_register_script( 'slickSlider', get_template_directory_uri().'/public/js/slick.min.js', false, null, true);
 	//wp_enqueue_script( 'slickSlider');
 
-	//Enqueue Custom JS File - Add custom JS here.
-	wp_register_script( 'customJS', get_template_directory_uri().'/public/js/custom.js', false, null, true);
-	wp_enqueue_script( 'customJS');
+	//Enqueue Bundled and Minified JS file.
+	wp_register_script( 'bundleJS', get_template_directory_uri().'/public/js/bundle.min.js', false, null, true);
+	$template_directory = get_template_directory_uri();
+	wp_localize_script('bundleJS', 'templateDirectory', $template_directory);
+	wp_enqueue_script( 'bundleJS');
 }
 add_action( 'wp_enqueue_scripts', 'bplate_scripts' );
 
@@ -128,4 +131,7 @@ function the_asset_dir(){
 
 //Email Submission Component
 require_once('email-component/main.php');
+
+//Deregister Email AJAX script. Email AJAX script is bundled. Comment lines out if not using bundled JS file.
+wp_deregister_script('email_ajax_js');
 ?>

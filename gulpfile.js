@@ -1,12 +1,14 @@
-var gulp    = require('gulp');
-var sass    = require('gulp-sass');
-var merge   = require('merge-stream');
-var concat  = require('gulp-concat');
-var prefix  = require('gulp-autoprefixer');
-var clean   = require('gulp-clean-css');
-var wait    = require('gulp-wait');
-var plumber = require('gulp-plumber');
-var gutil   = require('gulp-util');
+var gulp        = require('gulp');
+var sass        = require('gulp-sass');
+var merge       = require('merge-stream');
+var concat      = require('gulp-concat');
+var prefix      = require('gulp-autoprefixer');
+var clean       = require('gulp-clean-css');
+var wait        = require('gulp-wait');
+var plumber     = require('gulp-plumber');
+var gutil       = require('gulp-util');
+var browserSync = require('browser-sync');
+var uglify      = require('gulp-uglify');
 
 var devCSS = 'src/css/';
 
@@ -38,9 +40,41 @@ gulp.task('cssPack', function() {
            .pipe(gulp.dest("./public/css/"));
 });
 
-gulp.task('default', ['cssPack'], function() {
+gulp.task('jsPack', function(){
+    var devScripts,
+        submitScript;
+
+    devScripts = gulp.src(['./src/js/*.js', '!./src/js/ignore.*.js']);
+    submitScript = gulp.src('./email-component/email-ajax.js');
+
+    return merge(devScripts, submitScript)
+            .pipe(concat('bundle.min.js'))
+            .pipe(plumber(function (error) {
+                gutil.log(error.message);
+                this.emit('end');
+            }))
+            .pipe(uglify())
+            .pipe(gulp.dest('./public/js'));
+})
+
+gulp.task('browserSync', function(){
+    var files = [
+        './*.php',
+        './**/*.php',
+        './public/css/*.css',
+        './public/js/*.js',
+    ];
+
+    browserSync.init(files, {
+        proxy: 'http://localhost:8888/wp/'
+    });
+})
+
+gulp.task('default', ['cssPack', 'jsPack', 'browserSync'], function() {
     gulp.watch(devCSS + '*.css', ['cssPack']);
     gulp.watch(devCSS + '*.scss', ['cssPack']);
     gulp.watch(devCSS + 'import/*.scss', ['cssPack']);
     gulp.watch(devCSS + 'extra/*.scss', ['cssPack']);
+
+    gulp.watch('./src/js/*.js', ['jsPack']);
 });
