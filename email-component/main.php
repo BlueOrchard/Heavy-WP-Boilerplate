@@ -43,9 +43,13 @@ function create_subscribe_form_db(){
 
 add_action("after_switch_theme", "create_subscribe_form_db");
 
+require_once('email-options-page.php');
 require_once('email-submissions-page.php');
 function setup_theme_admin_menus() {
 	add_menu_page('Email Submissions', 'Email Signups', 'read', 'email-submissions', 'email_submissions', 'dashicons-email'); 
+
+	//Still Under construction
+	//add_options_page('Email Submission Settings', 'Signup Settings', 'read', 'email-submission-settings', 'email_settings', 'dashicons-email');
 }
 
 add_action("admin_menu", "setup_theme_admin_menus");
