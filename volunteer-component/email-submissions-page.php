@@ -46,8 +46,11 @@ function volunteer_submissions() {
                     <h4>Email</h4>
                     <?php echo $single->email ?>
 
-                    <h4>Phone</h4>
-                    <?php echo $single->phone ?>
+                    <h4>Cell Phone</h4>
+                    <?php echo $single->cell_phone ?>
+
+                    <h4>Home Phone</h4>
+                    <?php echo $single->home_phone ?>
                 </div>
 
                 <div>

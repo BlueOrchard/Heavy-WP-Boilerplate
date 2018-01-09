@@ -46,8 +46,9 @@ gulp.task('jsPack', function(){
 
     devScripts = gulp.src(['./src/js/*.js', '!./src/js/ignore.*.js']);
     submitScript = gulp.src('./email-component/email-ajax.js');
+    submitVolunteerScript = gulp.src('./volunteer-component/email-ajax.js');
 
-    return merge(devScripts, submitScript)
+    return merge(devScripts, submitScript, submitVolunteerScript)
             .pipe(concat('bundle.min.js'))
             .pipe(plumber(function (error) {
                 gutil.log(error.message);

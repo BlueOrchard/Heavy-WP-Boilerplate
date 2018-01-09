@@ -2,10 +2,10 @@
 
 //Equeue Frontend Scripts
 if(!is_admin()){
-	wp_register_script('email_ajax_js', get_template_directory_uri() . '/email-component/email-ajax.js', array('jquery'), null, true);
+	wp_register_script('volunteer_ajax_js', get_template_directory_uri() . '/volunteer-component/email-ajax.js', array('jquery'), null, true);
 	$template_directory = get_template_directory_uri();
-	wp_localize_script('email_ajax_js', 'templateDirectory', $template_directory);
-	wp_enqueue_script('email_ajax_js');
+	wp_localize_script('volunteer_ajax_js', 'templateDirectory', $template_directory);
+	wp_enqueue_script('volunteer_ajax_js');
 }
 
 //Upgrade DB

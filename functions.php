@@ -132,6 +132,10 @@ function the_asset_dir(){
 //Email Submission Component
 require_once('email-component/main.php');
 
-//Deregister Email AJAX script. Email AJAX script is bundled. Comment lines out if not using bundled JS file.
+//Volunteer Submission Component
+require_once('volunteer-component/main.php');
+
+//Deregister Email and Volunteer AJAX script. Email AJAX script is bundled. Comment lines out if not using bundled JS file.
 wp_deregister_script('email_ajax_js');
+wp_deregister_script('volunteer_ajax_js');
 ?>

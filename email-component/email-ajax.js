@@ -1,9 +1,11 @@
 $(document).ready(function(){
-    $.ajax({
-        url : templateDirectory + '/email-component/signup-form.html'
-    }).done(function(form){
-        $('.email-form').html(form);
-    })
+    if($('.email-form').length){
+        $.ajax({
+            url : templateDirectory + '/email-component/signup-form.html'
+        }).done(function(form){
+            $('.email-form').html(form);
+        })
+    }
 
     var submit = false;
     $(document).on('submit', '.submit-email', function(e){
