@@ -68,7 +68,7 @@ gulp.task('browserSync', function(){
     browserSync.init(files, {
         proxy: 'http://localhost:8888/wp/'
     });
-})
+});
 
 gulp.task('default', ['cssPack', 'jsPack', 'browserSync'], function() {
     gulp.watch(devCSS + '*.css', ['cssPack']);

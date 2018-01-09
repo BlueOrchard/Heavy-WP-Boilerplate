@@ -1,0 +1,133 @@
+#wpcontent{
+    padding-left: 0;
+}
+
+.header-ms{
+    padding: 20px;
+    color: #FFF;
+    background: #3b3c98;
+    border-bottom: 5px solid #2a2a80;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.header-ms h1{
+    margin: 0;
+    color: #FFF;
+}
+
+.header-ms p{
+    margin: 8px 0 0;
+    border-top: 1px solid #5253a2;
+    font-size: 10px;
+    padding: 3px 5px 0;
+}
+
+.submissions-ms{
+    margin: 20px 20px;
+    width: calc(100% - 40px);
+    border-collapse: collapse;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+}
+
+.submissions-ms th{
+    background: #FFF;
+    padding: 5px 10px;
+    text-align: left;
+    border: 1px solid #DDD;
+}
+
+.submissions-ms td{
+    padding: 5px 10px;
+    border-bottom: 1px solid #DDD;
+    width: calc(50% - 30px);
+    background: #efefef;
+}
+
+.options{
+    width: 60px!important;
+    text-align: center;
+}
+
+.delete{
+    color: #a00;
+}
+
+.delete:hover{
+    color: #dc3232;
+}
+
+.deleted{
+    margin: 10px 20px 0;
+    border: 1px solid #DDD;
+    padding: 10px;
+    background: #da7676;
+    border: 1px solid #963636;
+    color: #FFF;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.major-options{
+    margin: 10px 20px;
+    background: #e8e8e8;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #DDD;
+}
+
+.major-options a{
+    text-decoration: none;
+}
+
+.single-volunteer{
+    background: #FFF;
+    margin: 5px 20px 10px;
+    color: #404040;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.18);
+    position: relative;
+}
+
+.single-volunteer .inner{
+    display: flex;
+    width: 100%;
+}
+
+.single-volunteer .inner >div{
+    width: 33.3333%;
+    padding: 0 5px;
+}
+
+.single-volunteer h3{
+    margin: 0;
+    line-height: 1.5;
+    border-bottom: 1px solid #DDD;
+    font-size: 30px;
+}
+
+.single-volunteer h4{
+    margin: 0;
+    border-bottom: 1px dotted #DDD;
+    padding: 5px 0;
+    color: #3b3c98;
+    margin-top: 8px;
+}
+
+.single-volunteer p{
+    margin: 0;
+}
+
+.single-volunteer .delete{
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 30px;
+    padding: 10px;
+}
+
+.smalltext{
+    font-size: 10px;
+}
