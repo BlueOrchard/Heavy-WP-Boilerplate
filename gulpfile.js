@@ -78,4 +78,6 @@ gulp.task('default', ['cssPack', 'jsPack', 'browserSync'], function() {
     gulp.watch(devCSS + 'extra/*.scss', ['cssPack']);
 
     gulp.watch('./src/js/*.js', ['jsPack']);
+    gulp.watch('./email-component/*.js', ['jsPack']);
+    gulp.watch('./volunteer-component/*.js', ['jsPack']);
 });
