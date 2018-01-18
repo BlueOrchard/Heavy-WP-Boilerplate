@@ -1,7 +1,7 @@
 $(document).ready(function(){
     if($('.email-form').length){
         $.ajax({
-            url : templateDirectory + '/email-component/signup-form.html'
+            url : globalVars.templateDirectory + '/email-component/signup-form.html'
         }).done(function(form){
             $('.email-form').html(form);
         })
@@ -21,7 +21,7 @@ $(document).ready(function(){
     
             $.ajax({
                 data	 : formData,
-                url		 : templateDirectory + '/email-component/user-signup.php',
+                url		 : globalVars.templateDirectory + '/email-component/user-signup.php',
                 method	 : 'POST',
                 dataType : 'json'
             }).done(function(response){

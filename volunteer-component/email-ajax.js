@@ -1,7 +1,7 @@
 $(document).ready(function(){
     if($('.volunteer-form').length){
         $.ajax({
-            url : templateDirectory + '/volunteer-component/signup-form.html'
+            url : globalVars.templateDirectory + '/volunteer-component/signup-form.html'
         }).done(function(form){
             $('.volunteer-form').html(form);
         })
@@ -22,18 +22,17 @@ $(document).ready(function(){
     
             $.ajax({
                 data	 : formData,
-                url		 : templateDirectory + '/volunteer-component/user-signup.php',
+                url		 : globalVars.templateDirectory + '/volunteer-component/user-signup.php',
                 method	 : 'POST',
                 dataType : 'json'
             }).done(function(response){
-                console.log(response);
+                //console.log(response);
 
                 if(response.error){
                     $('.submit-status').text('Please Fill in Required Fields.');
                     $('.volunteer-submit').attr("disabled", false);
                 } else {
                     $('.submit-status').text('Thanks for Joining!');
-                    $('.submit-status').remove();
                     $('.volunteer-submit').attr("disabled", false);
                     vSubmit = true;
                 }

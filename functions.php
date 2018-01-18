@@ -1,5 +1,8 @@
 <?php
 
+//Variables
+$fontURL = "https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i";
+
 //Set theme up
 if ( ! function_exists( 'bplate_setup' ) ) :
 
@@ -53,8 +56,9 @@ function bplate_scripts() {
     //Enqueue style.css
 	wp_enqueue_style( 'bplate-style', get_template_directory_uri().'/public/css/style.min.css' );
 
-	//Enqueue Roboto Font (Regular, Semi-Bold and Bold Only)
-	wp_enqueue_style( 'bplate-font', "https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" );
+	//Enqueue Fonts
+	// - $fontURL is declared at the top of this file (functions.php) for convenience.
+	wp_enqueue_style( 'bplate-font', $fontURL );
 
 	//Enqueue Font Awesome
 	wp_enqueue_style( 'bplate-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" );
@@ -78,7 +82,9 @@ function bplate_scripts() {
 	//Enqueue Bundled and Minified JS file.
 	wp_register_script( 'bundleJS', get_template_directory_uri().'/public/js/bundle.min.js', false, null, true);
 	$template_directory = get_template_directory_uri();
-	wp_localize_script('bundleJS', 'templateDirectory', $template_directory);
+	wp_localize_script('bundleJS', 'globalVars', array(
+		'templateDirectory' => $template_directory
+	));
 	wp_enqueue_script( 'bundleJS');
 }
 add_action( 'wp_enqueue_scripts', 'bplate_scripts' );
@@ -138,4 +144,7 @@ require_once('volunteer-component/main.php');
 //Deregister Email and Volunteer AJAX script. Email AJAX script is bundled. Comment lines out if not using bundled JS file.
 wp_deregister_script('email_ajax_js');
 wp_deregister_script('volunteer_ajax_js');
+
+//Add premade functions for various items such as social icons
+require_once('prefab/main.php');
 ?>
