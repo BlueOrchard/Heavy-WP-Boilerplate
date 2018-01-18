@@ -20,8 +20,7 @@
             array('Last Name', 'last_name', true),
             array('Email', 'email', true),
 
-            array('Cell Phone', 'cell_phone', false),
-            array('Home Phone', 'home_phone', false),
+            array('Phone Number', 'phone', false),
 
             array('Address', 'address', true),
             array('City', 'city', true),
