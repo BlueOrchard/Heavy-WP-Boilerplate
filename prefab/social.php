@@ -29,6 +29,10 @@
             case 'snapchat':
                 $typeClass = 'fa-snapchat';
                 break;
+            case 'yt':
+            case 'youtube':
+                $typeClass = 'fa-youtube-play';
+                break;
             default:
                 $typeClass = 'fa-share-alt';
                 break;
