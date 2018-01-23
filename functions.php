@@ -1,8 +1,5 @@
 <?php
 
-//Variables
-$fontURL = "https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i";
-
 //Set theme up
 if ( ! function_exists( 'bplate_setup' ) ) :
 
@@ -58,7 +55,7 @@ function bplate_scripts() {
 
 	//Enqueue Fonts
 	// - $fontURL is declared at the top of this file (functions.php) for convenience.
-	wp_enqueue_style( 'bplate-font', $fontURL );
+	wp_enqueue_style( 'bplate-font', "https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" );
 
 	//Enqueue Font Awesome
 	wp_enqueue_style( 'bplate-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" );
