@@ -1,5 +1,17 @@
 <?php
-    function social_icon($type, $link, ...$classes){
+    //Can't use this at the moment with the current hosting
+    //function social_icon($type, $link, ...$classes){
+    function social_icon(){
+        //Workaround for variadic function
+        $type = func_get_arg(0);
+        $link = func_get_arg(1);
+        $classes = [];
+
+        for($i = 0; $i < func_num_args(); $i++){
+            array_push($classes, func_get_arg($i));
+        }
+        //End workaround
+
         $typeClass;
         $classString;
         $linkParser;
