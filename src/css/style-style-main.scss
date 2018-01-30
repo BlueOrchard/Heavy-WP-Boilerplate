@@ -3,6 +3,10 @@ $fontColor: #404040;
 $linkColor: #4554ca;
 $linkHoverColor: #8c94d8;
 
+$alertColor: #eee45b;
+$successColor: rgb(72, 196, 55);
+$failColor: rgb(211, 54, 54);
+
 $borderColor: #DDD;
  
 /* Border Box Box Sizing */
@@ -24,6 +28,9 @@ html {
 
 /* Footer CSS */
 @import "import/style-footer";
+
+/* Custom Toast Plugin CSS */
+@import "extra/toast";
 
 /* Slick Slider CSS. Be sure to uncomment this and the enqueue script + style in functions.php */
 //@import "extra/slick";

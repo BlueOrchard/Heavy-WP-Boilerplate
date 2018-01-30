@@ -13,11 +13,12 @@ $(document).ready(function(){
         if(submit == false){
             var formData = $(this).serialize();
             $('.join-submit').attr("disabled", true);
-            if($('.submit-status').length){
+            /* if($('.submit-status').length){
                 $('.submit-status').text('Submitting...');
             } else {
                 $('.submit-email').append('<h3 class="submit-status">Submitting...</h3>');
-            }
+            } */
+            toast('yellow', 'Submitting Your Information...');
     
             $.ajax({
                 data	 : formData,
@@ -26,10 +27,12 @@ $(document).ready(function(){
                 dataType : 'json'
             }).done(function(response){
                 if(response.error){
-                    $('.submit-status').text('Please Fill in Required Fields.');
+                    //$('.submit-status').text('Please Fill in Required Fields.');
+                    toast('red', 'Please Fill in Required Fields.');
                     $('.join-submit').attr("disabled", false);
                 } else {
-                    $('.submit-status').text('Thanks for Joining!');
+                    //$('.submit-status').text('Thanks for Joining!');
+                    toast('green', 'Thanks for Joining!');
                     $('.join-submit').attr("disabled", true);
                     submit = true;
                 }

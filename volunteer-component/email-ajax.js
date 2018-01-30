@@ -14,11 +14,12 @@ $(document).ready(function(){
             var formData = $(this).serialize();
 
             $('.volunteer-submit').attr("disabled", true);
-            if($('.submit-status').length){
+            /* if($('.submit-status').length){
                 $('.submit-status').text('Submitting...');
             } else {
-                $('.right').append('<h3 class="submit-status">Submitting...</h3>');
-            }
+                $('.submit-email').append('<h3 class="submit-status">Submitting...</h3>');
+            } */
+            toast('yellow', 'Submitting Your Information...');
     
             $.ajax({
                 data	 : formData,
@@ -29,10 +30,12 @@ $(document).ready(function(){
                 //console.log(response);
 
                 if(response.error){
-                    $('.submit-status').text('Please Fill in Required Fields.');
+                    //$('.submit-status').text('Please Fill in Required Fields.');
+                    toast('red', 'Please Fill in Required Fields.');
                     $('.volunteer-submit').attr("disabled", false);
                 } else {
-                    $('.submit-status').text('Thanks for Joining!');
+                    //$('.submit-status').text('Thanks for Joining!');
+                    toast('green', 'Thanks for Joining!');
                     $('.volunteer-submit').attr("disabled", false);
                     vSubmit = true;
                 }

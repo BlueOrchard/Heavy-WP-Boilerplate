@@ -1,0 +1,147 @@
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg)
+    }
+
+    50%{
+        transform: rotate(180deg)
+    }
+
+    100%{
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes five-close{
+    0%{
+        width: 0%
+    }
+
+    100%{
+        width: 100%;
+    }
+}
+
+.toast{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #FFF;
+    transition: 0.25s all;
+    height: 41px;
+    transform: translateY(100%);
+
+    &.show-toast{
+        transform: translateY(0);
+        box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    &:before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 41px;
+        height: 41px;
+    }
+
+    .toast-message{
+        display: block;
+        padding: 10px 10px 10px 51px;
+        font-weight: bold;
+        cursor: default;
+    }
+
+    .top-border-toast{
+        position: absolute;
+        top: 0px;
+        width: 0%;
+        left: 0;
+        background: #FFF;
+        height: 2px;
+    }
+
+    &.alert, &.yellow{
+        .top-border-toast{
+            background: $alertColor;
+            width: 100%;
+        }
+
+        &:before{
+            background: $alertColor;
+        }
+
+        &:after{
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: $alertColor;
+            top: 10px;
+            left: 10px;
+            border-radius: 20px;
+            border: 3px solid #FFF;
+            border-top-color: $alertColor;
+            animation: 0.5s rotate linear infinite;
+        }
+    }
+
+    &.success, &.green{
+        .top-border-toast{
+            background: $successColor;
+        }
+
+        &:before{
+            background: $successColor;
+        }
+
+        &:after{
+            content: "\f00c";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            text-rendering: auto;
+            color: #FFF;
+            font-size: 20px;
+        }
+
+        &.five-close{
+            .top-border-toast{
+                animation: 10s five-close linear;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+
+    &.fail, &.red{
+        .top-border-toast{
+            background: $failColor;
+        }
+
+        &:before{
+            background: $failColor;
+        }
+
+        &:after{
+            content: "\f00d";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            text-rendering: auto;
+            color: #FFF;
+            font-size: 20px;
+        }
+
+        &.five-close{
+            .top-border-toast{
+                animation: 10s five-close linear;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+}
