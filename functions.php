@@ -117,9 +117,6 @@ function bplate_posted_on() {
 }
 endif;
 
-//Add Advanced Custom Fields (ACF). Uncomment line below if ACF is needed. Alternatively, you can install the plugin.
-//require('includes/advanced-custom-fields/acf.php');
-
 //Disable WordPress Emojis. The reasoning behind this is that the WP Emoji script is called in the head and this is render blocking.
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 ); 
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' ); 
