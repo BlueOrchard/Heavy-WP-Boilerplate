@@ -32,7 +32,11 @@ $(document).ready(function(){
                     $('.join-submit').attr("disabled", false);
                 } else {
                     //$('.submit-status').text('Thanks for Joining!');
-                    toast('green', 'Thanks for Joining!');
+
+                    //Post registration functions (in custom.js)
+                    postRegistration();
+                    
+                    oast('green', 'Thanks for Joining!');
                     $('.join-submit').attr("disabled", true);
                     submit = true;
                 }

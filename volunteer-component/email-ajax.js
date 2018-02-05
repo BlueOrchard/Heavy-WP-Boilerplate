@@ -35,6 +35,10 @@ $(document).ready(function(){
                     $('.volunteer-submit').attr("disabled", false);
                 } else {
                     //$('.submit-status').text('Thanks for Joining!');
+
+                    //Post registration functions (in custom.js)
+                    postRegistration();
+
                     toast('green', 'Thanks for Joining!');
                     $('.volunteer-submit').attr("disabled", false);
                     vSubmit = true;

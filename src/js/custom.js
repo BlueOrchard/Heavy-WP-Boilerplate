@@ -11,3 +11,8 @@ $('.mobile-nav-button').on('click', function(){
     $(this).toggleClass('active-nav');
     $('.main-navigation').toggleClass('active-main');
 });
+
+function postRegistration(){
+    //For Facebook remarketing if used
+    //fbq('track', 'CompleteRegistration');
+}
