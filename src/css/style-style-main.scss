@@ -9,12 +9,22 @@ $failColor: rgb(211, 54, 54);
 
 $borderColor: #DDD;
  
+$site-width: 900px;
+
+/* Prefabricated CSS. Classes are based on consistent use. */
+@import "prefab/style-prefabs";
+
 /* Border Box Box Sizing */
 html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+// siteWidth mixin is in prefabs
+.widthHolder{
+  @include siteWidth;
 }
 
 /* Typography: Handles the way fonts look. Also handles bottom margin of text. */

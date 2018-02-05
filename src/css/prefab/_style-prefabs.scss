@@ -1,0 +1,38 @@
+@mixin siteWidth{
+    max-width: $site-width;
+}
+
+@mixin boxShadow{
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.377);
+}
+
+@mixin floatingHeader{
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+@mixin floatingSplash{
+    position: relative;
+    z-index: 1;
+
+    .text{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@mixin buttonHover{
+    transition: 0.25s all;
+
+    &:hover{
+        transform: scale(1.1);
+        box-shadow: 0px 10px 5px -5px rgba(0, 0, 0, 0.425);
+        transform: translateY(-2px);
+    }
+}

@@ -11,11 +11,20 @@
 }
 
 .splash{
+    //Uncomment if splash needs text on it.
+    //@include floatingSplash
+
     img{
         width: 100%;
         height: auto;
         display: block;
     }
+
+    //.text params are in ../prefab/style-prefabs
+}
+
+.button{
+    @include buttonHover;
 }
 
 .widget-area{

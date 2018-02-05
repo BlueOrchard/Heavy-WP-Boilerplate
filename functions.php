@@ -54,7 +54,6 @@ function bplate_scripts() {
 	wp_enqueue_style( 'bplate-style', get_template_directory_uri().'/public/css/style.min.css' );
 
 	//Enqueue Fonts
-	// - $fontURL is declared at the top of this file (functions.php) for convenience.
 	wp_enqueue_style( 'bplate-font', "https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" );
 
 	//Enqueue Font Awesome

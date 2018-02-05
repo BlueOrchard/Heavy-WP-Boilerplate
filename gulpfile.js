@@ -74,6 +74,7 @@ gulp.task('browserSync', function(){
 gulp.task('default', ['cssPack', 'jsPack', 'browserSync'], function() {
     gulp.watch(devCSS + '*.css', ['cssPack']);
     gulp.watch(devCSS + '*.scss', ['cssPack']);
+    gulp.watch(devCSS + 'prefab/*.scss', ['cssPack']);
     gulp.watch(devCSS + 'import/*.scss', ['cssPack']);
     gulp.watch(devCSS + 'extra/*.scss', ['cssPack']);
 

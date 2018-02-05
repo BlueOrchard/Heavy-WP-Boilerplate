@@ -1,6 +1,9 @@
 .site-header{
     padding: 10px;
     border-bottom: 1px solid $borderColor;
+
+    //Uncomment if header needs to be on top of splash
+    //@include floatingHeader
 }
 
 .main-navigation{
