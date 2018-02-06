@@ -36,7 +36,7 @@ $(document).ready(function(){
                     //Post registration functions (in custom.js)
                     postRegistration();
                     
-                    oast('green', 'Thanks for Joining!');
+                    toast('green', 'Thanks for Joining!');
                     $('.join-submit').attr("disabled", true);
                     submit = true;
                 }
