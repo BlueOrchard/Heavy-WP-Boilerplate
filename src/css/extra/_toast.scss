@@ -31,6 +31,7 @@
     transition: 0.25s all;
     height: 41px;
     transform: translateY(100%);
+    z-index: 100;
 
     &.show-toast{
         transform: translateY(0);
