@@ -50,7 +50,7 @@
                 break;
         }
 
-        $returnVal = '<a '. $linkParser .' class="social'. $classString .'">
+        $returnVal = '<a '. $linkParser .' target="_blank" class="social'. $classString .'">
                         <i class="fa '. $typeClass .'"></i>
                       </a>';
                       
