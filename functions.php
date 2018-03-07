@@ -56,17 +56,22 @@ function bplate_scripts() {
 	//Enqueue Fonts
 	wp_enqueue_style( 'bplate-font', "https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" );
 
-	//Enqueue Font Awesome
-	wp_enqueue_style( 'bplate-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" );
+	//DEPRECATED: Enqueue Font Awesome
+	// - Font Awesome 5 JS Enqueued Below
+	//wp_enqueue_style( 'bplate-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" );
 
     //Enqueue JQuery
     wp_deregister_script('jquery');
-    wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js", false, null, true);
-    wp_enqueue_script('jquery');
+    wp_register_script('jquery', "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js", false, null, true);
+	wp_enqueue_script('jquery');
+	
+	//Enqueue Font Awesome 5
+	wp_register_script('fa-icons', "https://use.fontawesome.com/releases/v5.0.8/js/all.js", false, null, true);
+	wp_enqueue_script('fa-icons');
 
     //Enqueue Comment Reply script
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+		wp_enqueue_script( 'comment-reply');
 	}
 
 	// DEPRECATED: Remove "ignore." from "ignore.slick.min.js" in ./src/js/ to use Slick Slider.
@@ -90,7 +95,10 @@ if ( ! function_exists( 'bplate_posted_on' ) ) :
 function bplate_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		//$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+
+		//Published Date Only
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
