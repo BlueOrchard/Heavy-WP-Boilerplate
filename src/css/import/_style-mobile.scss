@@ -116,6 +116,13 @@
     }
 }
 
+@media screen and (max-width: 600px){
+    //Reset for Mobile Admin bar
+    body{
+        position: initial;
+    }
+}
+
 @media screen and (max-width: 400px){
     
 }
