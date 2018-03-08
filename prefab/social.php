@@ -27,7 +27,7 @@
         switch($type){
             case 'fb':
             case 'facebook':
-                $typeClass = 'fa-facebook';
+                $typeClass = 'fa-facebook-f';
                 break;
             case 'tw':
             case 'twitter':
@@ -43,7 +43,7 @@
                 break;
             case 'yt':
             case 'youtube':
-                $typeClass = 'fa-youtube-play';
+                $typeClass = 'fa-youtube';
                 break;
             default:
                 $typeClass = 'fa-share-alt';
@@ -51,7 +51,7 @@
         }
 
         $returnVal = '<a '. $linkParser .' target="_blank" class="social'. $classString .'">
-                        <i class="fa '. $typeClass .'"></i>
+                        <i class="fab '. $typeClass .'"></i>
                       </a>';
                       
         print($returnVal);
