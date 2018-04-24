@@ -29,6 +29,8 @@
             $table_name,
             $values
         );
+
+        require "../mailer.php";
     }
 
     echo(json_encode($response));
