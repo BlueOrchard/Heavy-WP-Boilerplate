@@ -12,6 +12,14 @@ $('.mobile-nav-button').on('click', function(){
     $('.main-navigation').toggleClass('active-main');
 });
 
+function scrollTo(element){
+    $(element).on('click', function(){
+        $('html, body').animate({
+            scrollTop: $(element).offset().top
+        }, 500);
+    })
+}
+
 function postRegistration(){
     //For Facebook remarketing if used
     //fbq('track', 'CompleteRegistration');
