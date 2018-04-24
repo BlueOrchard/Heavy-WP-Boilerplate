@@ -65,9 +65,12 @@ function bplate_scripts() {
     wp_register_script('jquery', "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js", false, null, true);
 	wp_enqueue_script('jquery');
 	
-	//Enqueue Font Awesome 5
-	wp_register_script('fa-icons', "https://use.fontawesome.com/releases/v5.0.8/js/all.js", false, null, true);
-	wp_enqueue_script('fa-icons');
+	//Enqueue Font Awesome 5 JS - Using CSS instead due to limited support for pseudo elements
+	//wp_register_script('fa-icons', "https://use.fontawesome.com/releases/v5.0.8/js/all.js", false, null, true);
+	//wp_enqueue_script('fa-icons');
+
+	//Enqueue Font Awesome 5 CSS
+	wp_enqueue_style( 'bplate-icons', "https://use.fontawesome.com/releases/v5.0.10/css/all.css" );
 
     //Enqueue Comment Reply script
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

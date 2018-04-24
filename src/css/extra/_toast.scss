@@ -100,13 +100,19 @@
         &:after{
             content: "\f00c";
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 0;
+            left: 0;
             display: inline-block;
-            font: normal normal normal 14px/1 FontAwesome;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
             text-rendering: auto;
             color: #FFF;
             font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 41px;
+            height: 41px;
         }
 
         &.five-close{
@@ -129,13 +135,19 @@
         &:after{
             content: "\f00d";
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 0;
+            left: 0;
             display: inline-block;
-            font: normal normal normal 14px/1 FontAwesome;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
             text-rendering: auto;
             color: #FFF;
             font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 41px;
+            height: 41px;
         }
 
         &.five-close{
