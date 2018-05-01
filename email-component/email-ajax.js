@@ -21,11 +21,13 @@ $(document).ready(function(){
             toast('yellow', 'Submitting Your Information...');
     
             $.ajax({
-                data	 : formData,
+                data	 : formData  + "&ip=" + globalVars.visitorIP,
                 url		 : globalVars.templateDirectory + '/email-component/user-signup.php',
                 method	 : 'POST',
                 dataType : 'json'
             }).done(function(response){
+                console.log(response);
+
                 if(response.error){
                     //$('.submit-status').text('Please Fill in Required Fields.');
                     toast('red', 'Please Fill in Required Fields.');

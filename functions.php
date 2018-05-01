@@ -15,8 +15,8 @@ if ( ! function_exists( 'bplate_setup' ) ) :
 
         //Add a navigation menu
         register_nav_menus( array(
-            'menu-1' => esc_html__( 'Primary', 'bplate' ),
-        ) );
+			'menu-1' => esc_html__( 'Primary', 'bplate' ),
+		) );
 
         //Change core markup so it's valid HTML5
         add_theme_support( 'html5', array(
@@ -87,7 +87,8 @@ function bplate_scripts() {
 	wp_register_script( 'bundleJS', get_template_directory_uri().'/public/js/bundle.min.js', false, null, true);
 	$template_directory = get_template_directory_uri();
 	wp_localize_script('bundleJS', 'globalVars', array(
-		'templateDirectory' => $template_directory
+		'templateDirectory' => $template_directory,
+		'visitorIP' => $_SERVER['REMOTE_ADDR']
 	));
 	wp_enqueue_script( 'bundleJS');
 }

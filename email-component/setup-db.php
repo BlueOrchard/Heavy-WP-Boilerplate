@@ -11,6 +11,9 @@
         $fields = array(
             array('Name', 'name', true),
             array('Email', 'email', true),
+
+            array('IP Address', 'ip', false),
+            array('Date', 'date', false),
         );
         
         $options = array();

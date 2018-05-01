@@ -19,6 +19,9 @@
         $values[$option->slug] = filter_var($_POST[$option->slug], FILTER_SANITIZE_STRING);
     }
 
+    $values["ip"] = $_POST["ip"];
+    $values["date"] = date("m/d/Y");
+
     if(!$response->error){
         $table_name = $wpdb->prefix . "users_subscribed";
         

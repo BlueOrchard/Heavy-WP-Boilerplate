@@ -1,1 +1,1 @@
-[{"name":"Name","slug":"name","required":true},{"name":"Email","slug":"email","required":true}]
+[{"name":"Name","slug":"name","required":true},{"name":"Email","slug":"email","required":true},{"name":"IP Address","slug":"ip","required":false},{"name":"Date","slug":"date","required":false}]
