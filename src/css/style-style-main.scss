@@ -1,30 +1,20 @@
 /* Global Variables */
-$fontColor: #404040;
-$linkColor: #4554ca;
-$linkHoverColor: #8c94d8;
-
-$alertColor: #eee45b;
-$successColor: rgb(72, 196, 55);
-$failColor: rgb(211, 54, 54);
-
-$borderColor: #DDD;
- 
-$site-width: 900px;
+@import "prefab/global-variables";
 
 /* Prefabricated CSS. Classes are based on consistent use. */
 @import "prefab/style-prefabs";
 
 /* Border Box Box Sizing */
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 *, *:before, *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 // siteWidth mixin is in prefabs
 .widthHolder{
-  @include siteWidth;
+    @include siteWidth;
 }
 
 /* Typography: Handles the way fonts look. Also handles bottom margin of text. */
@@ -49,5 +39,9 @@ html {
 //@import "extra/slick";
 //@import "extra/slick-theme";
 
+/* Large Desktop Overrides */
+@import "import/style-large-desktop";
+
 /* Mobile CSS */
+@import "prefab/style-mobile-nav";
 @import "import/style-mobile";
