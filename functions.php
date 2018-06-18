@@ -135,9 +135,21 @@ remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
-//Asset directory function for ease of use
+//Asset directory function for ease of use - DEPRECATED
+// function the_asset_dir(){
+// 	echo get_template_directory_uri().'/assets';
+// }
+
 function the_asset_dir(){
-	echo get_template_directory_uri().'/assets';
+	$num_args = func_num_args();
+
+	if($num_args == 0){
+		echo get_template_directory_uri() . '/assets';
+	}
+
+	if($num_args == 1){
+		echo get_template_directory_uri() . '/assets/' . func_get_arg(0);
+	}
 }
 
 //Email Submission Component
