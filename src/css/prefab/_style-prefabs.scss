@@ -1,5 +1,26 @@
+@mixin absolutePos($verticalCenter: false, $horizontalCenter: false) {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @if($verticalCenter == true){
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    @if($horizontalCenter == true){
+        left: 50%;
+        transform: translateY(-50%);
+    }
+
+    @if($horizontalCenter == true and $verticalCenter == true){
+        transform: translate(-50%, -50%);
+    }
+}
+
 @mixin siteWidth{
     max-width: $site-width;
+    margin: 0 auto;
 }
 
 @mixin boxShadow{
