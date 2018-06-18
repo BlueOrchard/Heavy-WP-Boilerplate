@@ -12,10 +12,10 @@ $('.mobile-nav-button').on('click', function(){
     $('.main-navigation').toggleClass('active-main');
 });
 
-function scrollTo(element){
+function scrollTo(element, targetElement){
     $(element).on('click', function(){
         $('html, body').animate({
-            scrollTop: $(element).offset().top
+            scrollTop: $(targetElement).offset().top
         }, 500);
     })
 }
