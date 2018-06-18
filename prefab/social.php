@@ -15,6 +15,7 @@
         $typeClass;
         $classString;
         $linkParser;
+        $fontFamily = "fab";
 
         if($classes){
             $classString = " " . implode($classes, ' ');
@@ -51,7 +52,7 @@
         }
 
         $returnVal = '<a '. $linkParser .' target="_blank" class="social'. $classString .'">
-                        <i class="fab '. $typeClass .'"></i>
+                        <i class="' . $fontFamily . ' ' . $typeClass .'"></i>
                       </a>';
                       
         print($returnVal);
