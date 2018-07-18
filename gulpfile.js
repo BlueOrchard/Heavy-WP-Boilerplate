@@ -67,7 +67,7 @@ gulp.task('browserSync', function(){
     ];
 
     browserSync.init(files, {
-        proxy: 'http://localhost:8888/wp/'
+        proxy: 'http://127.0.0.1:8888/wp/'
     });
 });
 
