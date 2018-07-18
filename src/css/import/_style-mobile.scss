@@ -1,3 +1,10 @@
+/*
+    Scaling Viewport Font Size hack:
+        font-size: calc(1vw + 1vh + .5vmin);
+
+    For those times when the font size should scale with the viewport!
+*/
+
 
 @media screen and (max-width: 1040px){
     
